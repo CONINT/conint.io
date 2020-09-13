@@ -68,11 +68,11 @@
 				<p class="m1-txt1 p-b-36">
 					<strong><span id="line1">Virtual OSINT Conference and CTF</span></strong><br>
 					<span id="line2">October 17-18, 2020</span>
-					<span id="line2b">October 17-18, 2020</span>
+					<span id="line2b" style="display:none;">October 17-18, 2020</span>
 				</p>			
 				<p class="m1-txt1 p-b-36">
 					<span id="line3">Stay tuned for more information.</span>
-					<span id="line3b">Stay tuned for more information.</span>
+					<span id="line3b" style="display:none;">Stay tuned for more information.</span>
 				</p>
 
 			</div>
@@ -126,8 +126,6 @@
 	<script src="js/scramble.js"></script>
 	<script>
 	   $(document).ready(function(){
-			 $("#line2b").hide();
-			 $("#line3b").hide();
 			 $("#line2").codex({
 				 effect: "continuous",
 				 keep_whitespaces: false, // sodomize also whitespaces
@@ -150,8 +148,8 @@
 			 
 	   });
 	   $("#line2").on('go',function(){
-	     $("#line2").hide();
-		 $("#line2b").show();		 
+		 $("#line2").css("display", "none");
+		 $("#line2b").css("display", "block");			 
 		 $("#line2b").codex({
 			 effect: "charbychar",
 			 keep_whitespaces: false, // sodomize also whitespaces
@@ -161,8 +159,8 @@
 		 });
 	   });
 	   $("#line3").on('go',function(){
-		 $("#line3").hide();
-		 $("#line3b").show();	
+		 $("#line3").css("display", "none");
+		 $("#line3b").css("display", "block");	
 		 $("#line3b").codex({
 			 effect: "charbychar",
 			 keep_whitespaces: false, // sodomize also whitespaces
