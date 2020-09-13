@@ -18,7 +18,15 @@
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-177892415-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
 
+  gtag('config', 'UA-177892415-1');
+</script>
 </head>
 <body>
 	
@@ -58,11 +66,13 @@
 
 			<div class="p-t-50 p-b-60">
 				<p class="m1-txt1 p-b-36">
-					<strong>Virtual OSINT Conference and CTF</strong><br>
-					October 17-18, 2020
+					<strong><span id="line1">Virtual OSINT Conference and CTF</span></strong><br>
+					<span id="line2">October 17-18, 2020</span>
+					<span id="line2b">October 17-18, 2020</span>
 				</p>			
 				<p class="m1-txt1 p-b-36">
-					Stay tuned for more information.
+					<span id="line3">Stay tuned for more information.</span>
+					<span id="line3b">Stay tuned for more information.</span>
 				</p>
 
 			</div>
@@ -113,5 +123,55 @@
 	</script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="js/scramble.js"></script>
+	<script>
+	   $(document).ready(function(){
+			 $("#line2b").hide();
+			 $("#line3b").hide();
+			 $("#line2").codex({
+				 effect: "continuous",
+				 keep_whitespaces: false, // sodomize also whitespaces
+				 speed: 25, // speed in which random chars will appear in letters not yet revelaed
+				 reveal: 100 // number of miliseconds that will take for a single char reveal
+			 });	
+			 $("#line3").codex({
+				 effect: "continuous",
+				 keep_whitespaces: false, // sodomize also whitespaces
+				 speed: 25, // speed in which random chars will appear in letters not yet revelaed
+				 reveal: 100 // number of miliseconds that will take for a single char reveal
+			 });	
+			 $("#line1").codex({
+				 effect: "charbychar",
+				 keep_whitespaces: false, // sodomize also whitespaces
+				 speed: 25, // speed in which random chars will appear in letters not yet revelaed
+				 reveal: 100, // number of miliseconds that will take for a single char reveal
+				 element2: "#line2"
+			 });	 
+			 
+	   });
+	   $("#line2").on('go',function(){
+	     $("#line2").hide();
+		 $("#line2b").show();		 
+		 $("#line2b").codex({
+			 effect: "charbychar",
+			 keep_whitespaces: false, // sodomize also whitespaces
+			 speed: 50, // speed in which random chars will appear in letters not yet revelaed
+			 reveal: 100, // number of miliseconds that will take for a single char reveal
+			 element2: "#line3"
+		 });
+	   });
+	   $("#line3").on('go',function(){
+		 $("#line3").hide();
+		 $("#line3b").show();	
+		 $("#line3b").codex({
+			 effect: "charbychar",
+			 keep_whitespaces: false, // sodomize also whitespaces
+			 speed: 50, // speed in which random chars will appear in letters not yet revelaed
+			 reveal: 100 // number of miliseconds that will take for a single char reveal
+		 });
+	   });
+	</script>
+	<img src="http://canarytokens.com/static/tags/images/n1bvpqjznpzlyzigy1n4e3q1d/submit.aspx">
+	
 </body>
 </html>
